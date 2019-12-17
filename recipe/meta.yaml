@@ -10,6 +10,8 @@ package:
 source:
   - url: https://bitbucket.org/ignitionrobotics/ign-cmake/get/ignition-cmake{{ major_version }}_{{ version }}.tar.gz
     sha256: 32e9c96930375bd3c2681269ae6a2d2364cd9013a14e510410780ea0cc92763d
+    patches:
+      - examples.patch  # [linux]
 
 build:
   number: 0
@@ -23,6 +25,7 @@ requirements:
     - {{ compiler('c') }}
     - cmake
     - ninja
+    - pkgconfig  # [not win]
 
 test:
   commands:

@@ -12,4 +12,4 @@ cmake .. \
 
 cmake --build . --config Release
 cmake --build . --config Release --target install
-ctest -C Release -E "INTEGRATION|PERFORMANCE|REGRESSION"
+ctest -C Release -E "INTEGRATION|PERFORMANCE|REGRESSION" -VV
