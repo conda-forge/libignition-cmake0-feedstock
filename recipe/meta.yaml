@@ -12,9 +12,10 @@ source:
     sha256: 32e9c96930375bd3c2681269ae6a2d2364cd9013a14e510410780ea0cc92763d
     patches:
       - examples.patch  # [linux]
+      - FindGTS.cmake.patch  # [win]
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
