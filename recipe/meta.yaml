@@ -1,5 +1,5 @@
 {% set base_name = "libignition-cmake" %}
-{% set version = "2.1.1" %}
+{% set version = "2.2.0" %}
 {% set major_version = version.split('.')[0] %}
 {% set name = base_name + major_version %}
 
@@ -9,14 +9,14 @@ package:
 
 source:
   - url: https://bitbucket.org/ignitionrobotics/ign-cmake/get/ignition-cmake{{ major_version }}_{{ version }}.tar.gz
-    sha256: 32e9c96930375bd3c2681269ae6a2d2364cd9013a14e510410780ea0cc92763d
+    sha256: 071d0196f7cb9d96d52aa7b8f40742d198c8fc64ebac0f98d6b16fbae0980fc8
     patches:
       - examples.patch  # [linux]
       - FindGTS.cmake.patch  # [win]
       - FindIgnOGRE.cmake.patch  # [win]
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win and vc<14]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
