@@ -5,11 +5,9 @@ Home: https://bitbucket.org/ignitionrobotics/ign-cmake
 
 Package license: Apache-2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libignition-cmake0-feedstock/blob/master/LICENSE.txt)
 
 Summary: Ignition CMake : CMake Modules for Ignition Projects
-
-
 
 Current build status
 ====================
