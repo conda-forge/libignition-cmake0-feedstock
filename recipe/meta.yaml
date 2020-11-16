@@ -14,7 +14,7 @@ source:
       - examples.patch  # [linux]
       - FindGTS.cmake.patch  # [win]
       - FindIgnOGRE.cmake.patch  # [win]
-      - FindUUID.cmake.patch
+      - FindUUID.cmake.patch  # [osx]
 
 build:
   number: 2
