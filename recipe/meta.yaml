@@ -1,5 +1,5 @@
 {% set base_name = "libignition-cmake" %}
-{% set version = "2.6.1" %}
+{% set version = "2.6.2" %}
 {% set major_version = version.split('.')[0] %}
 {% set name = base_name + major_version %}
 
@@ -9,7 +9,7 @@ package:
 
 source:
   - url: https://github.com/ignitionrobotics/ign-cmake/archive/ignition-cmake{{ major_version }}_{{ version }}.tar.gz
-    sha256: 06759f076eca56de43a8df258ec04c166c0c4aee4c37ef3119c75405048a034b
+    sha256: 9b336a4c83584973864e786daa3a4a222c9e452689f3c174f8adfcae90122ba3
     patches:
       - examples.patch  # [linux]
       - FindGTS.cmake.patch  # [win]
