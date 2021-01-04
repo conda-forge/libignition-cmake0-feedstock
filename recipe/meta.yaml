@@ -13,11 +13,9 @@ source:
     patches:
       - examples.patch  # [linux]
       - FindGTS.cmake.patch  # [win]
-      - FindUUID.cmake.patch  # [osx]
 
 build:
-  number: 0
-  skip: true  # [win and vc<14]
+  number: 1
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
 
@@ -35,7 +33,7 @@ test:
     - if exist %PREFIX%\\Library\\share\\cmake\\ignition-cmake{{ major_version }}\\ignition-cmake{{ major_version }}-config.cmake (exit 0) else (exit 1)  # [win]
 
 about:
-  home: https://bitbucket.org/ignitionrobotics/ign-cmake
+  home: https://github.com/ignitionrobotics/ign-cmake
   license: Apache-2.0
   license_file: LICENSE
   summary: 'Ignition CMake : CMake Modules for Ignition Projects'
