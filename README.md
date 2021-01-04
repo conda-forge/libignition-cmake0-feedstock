@@ -1,7 +1,7 @@
 About libignition-cmake2
 ========================
 
-Home: https://bitbucket.org/ignitionrobotics/ign-cmake
+Home: https://github.com/ignitionrobotics/ign-cmake
 
 Package license: Apache-2.0
 
