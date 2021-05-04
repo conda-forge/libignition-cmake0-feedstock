@@ -10,8 +10,6 @@ package:
 source:
   - url: https://github.com/ignitionrobotics/ign-cmake/archive/ignition-cmake{{ major_version }}_{{ version }}.tar.gz
     sha256: afb430b06adff0ee16616e4e308847eb3e4b10d1eb2c30148bdbb93fe8e82783
-    patches:
-      - examples.patch  # [linux]
 
 build:
   number: 0
