@@ -1,0 +1,34 @@
+From 938b50994488c53dbe8c1a8a032b9e202f79e317 Mon Sep 17 00:00:00 2001
+From: Silvio Traversaro <silvio@traversaro.it>
+Date: Tue, 26 Oct 2021 16:35:39 +0200
+Subject: [PATCH] To not modify CMAKE_FIND_LIBRARY_PREFIXES  and
+ CMAKE_FIND_LIBRARY_SUFFIXES  on Windows
+
+`CMAKE_FIND_LIBRARY_PREFIXES` and `CMAKE_FIND_LIBRARY_SUFFIXES` are variables that are used by
+CMake to change the behaviour of the `find_library` call. Changing them to `.lib;.dll` in the CMake config
+file of every ignition project affect silently any downstream project that calls `find_package(ignition-<pkg>)`,
+even if transitevely, leading to subtle bugs.
+
+Signed-off-by: Silvio <silvio@traversaro.it>
+---
+ cmake/ignition-config.cmake.in | 6 ------
+ 1 file changed, 6 deletions(-)
+
+diff --git a/cmake/ignition-config.cmake.in b/cmake/ignition-config.cmake.in
+index 7bd502f..7d4dc42 100644
+--- a/cmake/ignition-config.cmake.in
++++ b/cmake/ignition-config.cmake.in
+@@ -133,12 +133,6 @@ else()
+     INTERFACE_LINK_LIBRARIES "${ign_all_components};@import_target_name@")
+ endif()
+ 
+-# On windows we produce .dll libraries with no prefix
+-if(WIN32)
+-  set(CMAKE_FIND_LIBRARY_PREFIXES "")
+-  set(CMAKE_FIND_LIBRARY_SUFFIXES ".lib" ".dll")
+-endif()
+-
+ # Package variables. Note that @PKG_NAME@_LIBRARIES and @PKG_NAME@_CORE_LIBRARY
+ # contain imported targets, so @PKG_NAME@_INCLUDE_DIRS is never needed.
+ set(@PKG_NAME@_CORE_LIBRARY @simple_import_name@)
+ 
