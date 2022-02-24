@@ -1,5 +1,5 @@
 {% set base_name = "libignition-cmake" %}
-{% set version = "2.10.0" %}
+{% set version = "2.11.0" %}
 {% set major_version = version.split('.')[0] %}
 {% set name = base_name + major_version %}
 
@@ -9,7 +9,7 @@ package:
 
 source:
   - url: https://github.com/ignitionrobotics/ign-cmake/archive/ignition-cmake{{ major_version }}_{{ version }}.tar.gz
-    sha256: b6075d0835d50a7fe2e1cdfce9fabe74a76d3e5cf677ce1da203bfa88035e88a
+    sha256: d9e0f211b4395555c7c3e21ff58d32c7fe8578a6c0bc9ed443201dbaf70df547
 
 build:
   number: 0
